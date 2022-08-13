@@ -1,0 +1,17 @@
+﻿<Window x:Class="CatchTheFly.View.Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatchTheFly.View"
+        mc:Ignorable="d"
+        Title="Catch the fly" Height="450" Width="800" Background="#274453">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Background="#A34B19" Name="Score" HorizontalContentAlignment="Center" VerticalAlignment="Center" Content="Score: 0" FontSize="25" Foreground="#EBE2CB"/>
+        <Canvas Name="MyCanvas" Grid.Row="1"></Canvas>
+    </Grid>
+</Window>

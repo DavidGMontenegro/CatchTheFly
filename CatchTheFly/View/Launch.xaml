@@ -1,0 +1,31 @@
+﻿<Window x:Class="CatchTheFly.View.Launch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatchTheFly.View"
+        mc:Ignorable="d"
+        Title="Catch the fly" Height="450" Width="800" Background="#A4AC8F">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="1" Cursor="Hand" Background="#274453" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Height="auto" Content="  JUGAR  " Foreground="#EBE2CB" FontFamily="Tahoma" FontSize="35" Click="StartGame"></Button>
+            <Image Margin="6,10,6,77" Grid.RowSpan="2" Source="/flyLogo.png" Stretch="Fill"/>
+        </Grid>
+        <GridSplitter HorizontalAlignment="Right" Height="414" Margin="0,0,0,0" VerticalAlignment="Center" Width="5" Grid.Column="0" Background="#A34B19"/>
+        <GridSplitter HorizontalAlignment="Left" Height="414" Margin="0,0,0,0" VerticalAlignment="Center" Width="5" Grid.Column="2" Background="#A34B19"/>
+
+    </Grid>
+</Window>
