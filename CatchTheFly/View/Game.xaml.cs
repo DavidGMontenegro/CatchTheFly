@@ -20,12 +20,6 @@ namespace CatchTheFly.View
         DispatcherTimer gameTimer = new DispatcherTimer();
         DispatcherTimer fallingTimer = new DispatcherTimer();
 
-        private MediaPlayer playCatchSound = new MediaPlayer();
-        private MediaPlayer playgameOver = new MediaPlayer();
-
-        Uri catchSound;
-        Uri gameOver;
-
         private int spawnRate = 50;
         private bool playing = true;
         private double speed = 10;
@@ -42,9 +36,6 @@ namespace CatchTheFly.View
         public Game()
         {
             InitializeComponent();
-
-            catchSound = new Uri("\\View\\Sounds\\catchSound.mp3", UriKind.RelativeOrAbsolute);
-            gameOver = new Uri("pack://siteoforigin:,,,/Sounds/gameOver.mp3");
 
             gameTimer.Tick += createObjects;
             gameTimer.Interval = TimeSpan.FromMilliseconds(25);
@@ -130,26 +121,47 @@ namespace CatchTheFly.View
                 removeImage = MyCanvas.Children.OfType<Image>().ToList<Image>();
                 foreach (var x in removeImage)
                 {
-
-                    Canvas.SetTop(x, Canvas.GetTop(x) + speed);
-                    speed += 0.05;
-
-                    if (Canvas.GetTop(x) >= (GameWindow.ActualHeight - 150))
+                    if (x.Name == "blood_stain")
                     {
+                        Canvas.SetTop(x, Canvas.GetTop(x) + 2.5);
+                    }
+                    else
+                    {
+                        Canvas.SetTop(x, Canvas.GetTop(x) + speed);
+                        speed += 0.05;
+                    }
+
+
+                    if (Canvas.GetTop(x) >= (GameWindow.ActualHeight - 175))
+                    {
+
+                        x.Opacity = 0.5;
                         if (Canvas.GetLeft(x) >= (Canvas.GetLeft(Catcher) - Catcher.ActualWidth + 30) && ((Canvas.GetLeft(x) + x.ActualWidth) <= Canvas.GetLeft(Catcher) + 2 * Catcher.ActualWidth - 30))
                         {
-                            score += 10;
-                            Score.Content = "Score: " + score;
-
-                            playCatchSound.Open(catchSound);
-                            playCatchSound.Play();
+                            if (x.Name != "blood_stain")
+                            {
+                                score += 10;
+                                x.Name = "blood_stain";
+                                x.Source = new BitmapImage(new Uri("\\View\\Pics\\blood stain.png", UriKind.RelativeOrAbsolute));
+                            }
                         }
                         else
                         {
-                            playing = false;
-                            goToLaunchScreen();
+                            if (x.Name != "blood_stain")
+                            {
+                                score -= 5;
+                                x.Name = "blood_stain";
+                                x.Source = new BitmapImage(new Uri("\\View\\Pics\\failed.png", UriKind.RelativeOrAbsolute));
+                            }
                         }
+                        Score.Content = "Score: " + score;
+                    }
+                }
 
+                foreach (var x in removeImage)
+                {
+                    if (Canvas.GetTop(x) >= (GameWindow.ActualHeight - 100))
+                    {
                         MyCanvas.Children.Remove(x);
                     }
                 }
@@ -187,8 +199,6 @@ namespace CatchTheFly.View
         {
 
             MyCanvas.Children.Clear();
-            playgameOver.Open(gameOver);
-            playgameOver.Play();
 
             MessageBoxResult result = MessageBox.Show("  GAME OVER  ", "Game over", MessageBoxButton.OK);
 

@@ -1,0 +1,23 @@
+[33mcommit e97bf3d5fe2f5293ca6ba3586c1a3c61576bb59c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: david_garciaam <davidgm0928@gmail.com>
+Date:   Tue Aug 16 14:48:26 2022 +0200
+
+    Media organized, audio not working
+
+[33mcommit c83babe2c5f9b0804901004fcfe9cf212d23c421[m
+Author: david_garciaam <davidgm0928@gmail.com>
+Date:   Tue Aug 16 14:29:35 2022 +0200
+
+    Audio not working. Media not organized
+
+[33mcommit f5ed86aa32da4236ce046e44f8e4365a2b6f33b8[m
+Author: david_garciaam <davidgm0928@gmail.com>
+Date:   Sat Aug 13 21:51:23 2022 +0200
+
+    Agregar archivos de proyecto.
+
+[33mcommit 7ee81eaeed86429fb580c4e87197af7c7c5d5640[m
+Author: david_garciaam <davidgm0928@gmail.com>
+Date:   Sat Aug 13 21:51:21 2022 +0200
+
+    Agregar .gitattributes y .gitignore.

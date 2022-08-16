@@ -120,6 +120,8 @@
     <Resource Include="View\Pics\insect.png" />
     <Resource Include="View\Pics\jungle background.png" />
     <Resource Include="View\Pics\mataMoscas.png" />
+    <Resource Include="View\Pics\blood stain.png" />
+    <Resource Include="View\Pics\failed.png" />
     <Content Include="View\Sounds\catchSound.mp3" />
     <Content Include="View\Sounds\gameOver.mp3" />
   </ItemGroup>

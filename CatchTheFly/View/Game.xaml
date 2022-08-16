@@ -45,8 +45,5 @@
         <Image Grid.ColumnSpan="3" Source="/View/Pics/trunk.png" Stretch="Fill"/>
         <Label Grid.ColumnSpan="3" Name="Score" HorizontalContentAlignment="Center" Content="Score: 0" FontSize="30" Foreground="#EBE2CB"/>
 
-        <MediaElement HorizontalAlignment="Left" Height="100" Margin="10,529,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Source="/view/sounds/catchsound.mp3
-"/>
-
     </Grid>
 </Window>
