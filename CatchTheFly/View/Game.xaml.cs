@@ -31,14 +31,13 @@ namespace CatchTheFly.View
         private List<Image> removeImage = new List<Image>();
 
         Random rand = new Random();
-        Brush brush;
 
         public Game()
         {
             InitializeComponent();
 
             gameTimer.Tick += createObjects;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(25);
+            gameTimer.Interval = TimeSpan.FromMilliseconds(10);
 
             fallingTimer.Tick += fallEvent;
             fallingTimer.Interval = TimeSpan.FromMilliseconds(50);
@@ -63,21 +62,17 @@ namespace CatchTheFly.View
 
                 if (rand.Next(1, 4) == 1)
                 {
-                    brush = new SolidColorBrush(Color.FromRgb((byte)rand.Next(1, 255), (byte)rand.Next(1, 255), (byte)rand.Next(1, 255)));
-                    Ellipse circle = new Ellipse
-                    {
-                        Tag = "circle",
-                        Height = 50,
-                        Width = 50,
-                        Stroke = Brushes.Black,
-                        StrokeThickness = 1,
-                        Fill = brush
-                    };
+                    Image image = new Image();
+                    image.Source = new BitmapImage(new Uri("\\View\\Pics\\coco.png", UriKind.RelativeOrAbsolute));
 
-                    Canvas.SetLeft(circle, posX);
-                    Canvas.SetTop(circle, posY);
+                    image.Height = 45;
+                    image.Width = 45;
 
-                    MyCanvas.Children.Add(circle);
+                    Canvas.SetLeft(image, posX);
+                    Canvas.SetTop(image, posY);
+                    image.Name = "coco";
+
+                    MyCanvas.Children.Add(image);
                 }
                 else
                 {
@@ -134,25 +129,37 @@ namespace CatchTheFly.View
 
                     if (Canvas.GetTop(x) >= (GameWindow.ActualHeight - 175))
                     {
-
                         x.Opacity = 0.5;
                         if (Canvas.GetLeft(x) >= (Canvas.GetLeft(Catcher) - Catcher.ActualWidth + 30) && ((Canvas.GetLeft(x) + x.ActualWidth) <= Canvas.GetLeft(Catcher) + 2 * Catcher.ActualWidth - 30))
                         {
-                            if (x.Name != "blood_stain")
+                            if (x.Name == "coco")
+                            {
+                                MyCanvas.Children.Remove(x);
+                                goToLaunchScreen();
+                            }
+                            else if (x.Name != "blood_stain")
                             {
                                 score += 10;
                                 x.Name = "blood_stain";
                                 x.Source = new BitmapImage(new Uri("\\View\\Pics\\blood stain.png", UriKind.RelativeOrAbsolute));
                             }
+
+
                         }
                         else
                         {
-                            if (x.Name != "blood_stain")
+                            if (x.Name == "coco")
+                            {
+                                MyCanvas.Children.Remove(x);
+                            }
+                            else if (x.Name != "blood_stain")
                             {
                                 score -= 5;
                                 x.Name = "blood_stain";
                                 x.Source = new BitmapImage(new Uri("\\View\\Pics\\failed.png", UriKind.RelativeOrAbsolute));
                             }
+
+
                         }
                         Score.Content = "Score: " + score;
                     }
@@ -162,23 +169,6 @@ namespace CatchTheFly.View
                 {
                     if (Canvas.GetTop(x) >= (GameWindow.ActualHeight - 100))
                     {
-                        MyCanvas.Children.Remove(x);
-                    }
-                }
-
-                removeEllipse = MyCanvas.Children.OfType<Ellipse>().ToList<Ellipse>();
-                foreach (var x in removeEllipse)
-                {
-                    Canvas.SetTop(x, Canvas.GetTop(x) + speed);
-
-                    if (Canvas.GetTop(x) >= GameWindow.ActualHeight - 150)
-                    {
-                        if (Canvas.GetLeft(x) >= (Canvas.GetLeft(Catcher) - Catcher.ActualWidth + 30) && ((Canvas.GetLeft(x) + x.ActualWidth) <= Canvas.GetLeft(Catcher) + 2 * Catcher.ActualWidth - 30))
-                        {
-                            playing = false;
-                            goToLaunchScreen();
-                        }
-
                         MyCanvas.Children.Remove(x);
                     }
                 }
