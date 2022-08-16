@@ -43,7 +43,7 @@ namespace CatchTheFly.View
         {
             InitializeComponent();
 
-            catchSound = new Uri("\\catchSound.mp3", UriKind.RelativeOrAbsolute);
+            catchSound = new Uri("\\View\\Sounds\\catchSound.mp3", UriKind.RelativeOrAbsolute);
             gameOver = new Uri("pack://siteoforigin:,,,/Sounds/gameOver.mp3");
 
             gameTimer.Tick += createObjects;
@@ -95,19 +95,19 @@ namespace CatchTheFly.View
                     switch (rand.Next(1, 6))
                     {
                         case 1:
-                            image.Source = new BitmapImage(new Uri("\\flyLogo.png", UriKind.RelativeOrAbsolute));
+                            image.Source = new BitmapImage(new Uri("\\View\\Pics\\flyLogo.png", UriKind.RelativeOrAbsolute));
                             break;
                         case 2:
-                            image.Source = new BitmapImage(new Uri("\\fly.png", UriKind.RelativeOrAbsolute));
+                            image.Source = new BitmapImage(new Uri("\\View\\Pics\\fly.png", UriKind.RelativeOrAbsolute));
                             break;
                         case 3:
-                            image.Source = new BitmapImage(new Uri("\\insect.png", UriKind.RelativeOrAbsolute));
+                            image.Source = new BitmapImage(new Uri("\\View\\Pics\\insect.png", UriKind.RelativeOrAbsolute));
                             break;
                         case 4:
-                            image.Source = new BitmapImage(new Uri("\\bee.png", UriKind.RelativeOrAbsolute));
+                            image.Source = new BitmapImage(new Uri("\\View\\Pics\\bee.png", UriKind.RelativeOrAbsolute));
                             break;
                         case 5:
-                            image.Source = new BitmapImage(new Uri("\\mosquito.png", UriKind.RelativeOrAbsolute));
+                            image.Source = new BitmapImage(new Uri("\\View\\Pics\\mosquito.png", UriKind.RelativeOrAbsolute));
                             break;
                     }
 
@@ -136,7 +136,7 @@ namespace CatchTheFly.View
 
                     if (Canvas.GetTop(x) >= (GameWindow.ActualHeight - 150))
                     {
-                        if (Canvas.GetLeft(x) >= (Canvas.GetLeft(Catcher) - Catcher.ActualWidth + 10) && ((Canvas.GetLeft(x) + x.ActualWidth) <= Canvas.GetLeft(Catcher) + 2 * Catcher.ActualWidth - 10))
+                        if (Canvas.GetLeft(x) >= (Canvas.GetLeft(Catcher) - Catcher.ActualWidth + 30) && ((Canvas.GetLeft(x) + x.ActualWidth) <= Canvas.GetLeft(Catcher) + 2 * Catcher.ActualWidth - 30))
                         {
                             score += 10;
                             Score.Content = "Score: " + score;

@@ -33,16 +33,20 @@
                 <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Image Source="/sea background.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" />
+            <Image Source="/View/Pics/sea background.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" />
 
             <Canvas Name="CatcherCanvas" Grid.Row="1" Width="500">
-                <Image Name="Catcher"  Source="/mataMoscas.png" Height="70" Width="70"/>
+                <Image Name="Catcher"  Source="/View/Pics/mataMoscas.png" Height="70" Width="70"/>
             </Canvas>
 
             <Canvas Name="MyCanvas" Grid.RowSpan="2" Width="500"></Canvas>
         </Grid>
-        <Image Source="/jungle animal background.png" Stretch="Fill" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Opacity="0.8"/>
-        <Image Grid.ColumnSpan="3" Source="/trunk.png" Stretch="Fill"/>
+        <Image Source="/View/Pics/jungle animal background.png" Stretch="Fill" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Opacity="0.8"/>
+        <Image Grid.ColumnSpan="3" Source="/View/Pics/trunk.png" Stretch="Fill"/>
         <Label Grid.ColumnSpan="3" Name="Score" HorizontalContentAlignment="Center" Content="Score: 0" FontSize="30" Foreground="#EBE2CB"/>
+
+        <MediaElement HorizontalAlignment="Left" Height="100" Margin="10,529,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Source="/view/sounds/catchsound.mp3
+"/>
+
     </Grid>
 </Window>

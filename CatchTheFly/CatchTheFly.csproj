@@ -108,22 +108,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="View\Sounds\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="trunk.png" />
-    <Resource Include="jungle animal background.png" />
-    <Resource Include="mosquito.png" />
-    <Resource Include="sea background.png" />
-    <Resource Include="bee.png" />
-    <Resource Include="fly.png" />
-    <Resource Include="flyLogo.png" />
-    <Resource Include="insect.png" />
-    <Resource Include="jungle background.png" />
-    <Resource Include="mataMoscas.png" />
-    <Content Include="catchSound.mp3" />
-    <Content Include="gameOver.mp3" />
+    <Resource Include="View\Pics\trunk.png" />
+    <Resource Include="View\Pics\jungle animal background.png" />
+    <Resource Include="View\Pics\mosquito.png" />
+    <Resource Include="View\Pics\sea background.png" />
+    <Resource Include="View\Pics\bee.png" />
+    <Resource Include="View\Pics\fly.png" />
+    <Resource Include="View\Pics\flyLogo.png" />
+    <Resource Include="View\Pics\insect.png" />
+    <Resource Include="View\Pics\jungle background.png" />
+    <Resource Include="View\Pics\mataMoscas.png" />
+    <Content Include="View\Sounds\catchSound.mp3" />
+    <Content Include="View\Sounds\gameOver.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

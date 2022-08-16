@@ -14,11 +14,11 @@
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Source="/jungle animal background.png" Stretch="Fill" Grid.RowSpan="3" Opacity="0.8"/>
-        <Image Source="/trunk.png" Grid.Row="0" Stretch="Fill"/>
+        <Image Source="/View/Pics/jungle animal background.png" Stretch="Fill" Grid.RowSpan="3" Opacity="0.8"/>
+        <Image Source="/View/Pics/trunk.png" Grid.Row="0" Stretch="Fill"/>
         <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="DAVID" FontSize="30" Foreground="#EBE2CB" ></Label>
 
-        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Source="/mosquito.png" Stretch="Fill" Height="300" Width="268"/>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Source="/View/Pics/mosquito.png" Stretch="Fill" Height="300" Width="268"/>
 
         <Button Grid.Row="2" Cursor="Hand"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="auto" Height="auto" Content="  JUGAR  " Foreground="#A34B19" FontFamily="Tahoma" FontSize="40" Click="StartGame"></Button>
     </Grid>
