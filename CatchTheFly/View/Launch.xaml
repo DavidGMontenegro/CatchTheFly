@@ -5,27 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatchTheFly.View"
         mc:Ignorable="d"
-        Title="Catch the fly" Height="450" Width="800" Background="#A4AC8F">
+        Title="Catch the fly" Height="700" Width="800" Background="#A4AC8F"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="/jungle animal background.png" Stretch="Fill" Grid.RowSpan="3" Opacity="0.8"/>
+        <Image Source="/trunk.png" Grid.Row="0" Stretch="Fill"/>
+        <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="DAVID" FontSize="30" Foreground="#EBE2CB" ></Label>
 
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Source="/mosquito.png" Stretch="Fill" Height="300" Width="268"/>
 
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions >
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="0.5*"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <Button Grid.Row="1" Cursor="Hand" Background="#274453" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Height="auto" Content="  JUGAR  " Foreground="#EBE2CB" FontFamily="Tahoma" FontSize="35" Click="StartGame"></Button>
-            <Image Margin="6,10,6,77" Grid.RowSpan="2" Source="/flyLogo.png" Stretch="Fill"/>
-        </Grid>
-        <GridSplitter HorizontalAlignment="Right" Height="414" Margin="0,0,0,0" VerticalAlignment="Center" Width="5" Grid.Column="0" Background="#A34B19"/>
-        <GridSplitter HorizontalAlignment="Left" Height="414" Margin="0,0,0,0" VerticalAlignment="Center" Width="5" Grid.Column="2" Background="#A34B19"/>
-
+        <Button Grid.Row="2" Cursor="Hand"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="auto" Height="auto" Content="  JUGAR  " Foreground="#A34B19" FontFamily="Tahoma" FontSize="40" Click="StartGame"></Button>
     </Grid>
 </Window>

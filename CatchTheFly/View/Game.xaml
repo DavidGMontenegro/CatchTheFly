@@ -5,13 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatchTheFly.View"
         mc:Ignorable="d"
-        Title="Catch the fly" Height="450" Width="800" Background="#274453">
-    <Grid>
+        Title="Catch the fly" Height="700" Width="800" Background="#A4AC8F"
+        MouseMove="moveCatcher" Name="GameWindow"
+        WindowStartupLocation="CenterScreen">
+    <Grid >
+
         <Grid.RowDefinitions >
-            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Background="#A34B19" Name="Score" HorizontalContentAlignment="Center" VerticalAlignment="Center" Content="Score: 0" FontSize="25" Foreground="#EBE2CB"/>
-        <Canvas Name="MyCanvas" Grid.Row="1"></Canvas>
+
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Width="10" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Right" Fill="#E6CE85"/>
+        <Rectangle Width="10" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Left" Fill="#E6CE85"/>
+
+
+        <Rectangle Name="leftControlRectangle" Grid.Row="1" Grid.Column="0"></Rectangle>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Source="/sea background.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" />
+
+            <Canvas Name="CatcherCanvas" Grid.Row="1" Width="500">
+                <Image Name="Catcher"  Source="/mataMoscas.png" Height="70" Width="70"/>
+            </Canvas>
+
+            <Canvas Name="MyCanvas" Grid.RowSpan="2" Width="500"></Canvas>
+        </Grid>
+        <Image Source="/jungle animal background.png" Stretch="Fill" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Opacity="0.8"/>
+        <Image Grid.ColumnSpan="3" Source="/trunk.png" Stretch="Fill"/>
+        <Label Grid.ColumnSpan="3" Name="Score" HorizontalContentAlignment="Center" Content="Score: 0" FontSize="30" Foreground="#EBE2CB"/>
     </Grid>
 </Window>

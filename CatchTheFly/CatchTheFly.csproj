@@ -109,10 +109,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="flyLogo.png" />
+    <Folder Include="View\Sounds\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\Pics\" />
+    <Resource Include="trunk.png" />
+    <Resource Include="jungle animal background.png" />
+    <Resource Include="mosquito.png" />
+    <Resource Include="sea background.png" />
+    <Resource Include="bee.png" />
+    <Resource Include="fly.png" />
+    <Resource Include="flyLogo.png" />
+    <Resource Include="insect.png" />
+    <Resource Include="jungle background.png" />
+    <Resource Include="mataMoscas.png" />
+    <Content Include="catchSound.mp3" />
+    <Content Include="gameOver.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
